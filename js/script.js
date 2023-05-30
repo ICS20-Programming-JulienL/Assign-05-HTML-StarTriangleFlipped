@@ -6,22 +6,25 @@
 
 function displayTriangle() {
 
-   // initialize numbers to an empty string
+   // initialize results to an empty string
   let results = ""
 
   // initialize counter to 0
   let counter = 1
 
 
-  // initialize factorial to 1
+  // initialize star to an empty string
   let star = ""
 
   // get height from user input
   let height = document.getElementById("height").value
 
+   //// if height is an empty string or is less than or equal to 0, then tell the user to input a positive integerheigh
   if ((height == "") || (height <= 0)) {
     results = "Please enter a positive integer greater than 0.";
     }
+
+     // display upright triangle while counter <= height
      do {
        
        // if the counter is a multiple of 5, repeat planet symbols
@@ -32,6 +35,8 @@ function displayTriangle() {
 
          // add a line break
           results= results+star+"<br>"
+
+         //increment the counter
           counter++
        }
 
@@ -54,10 +59,12 @@ function displayTriangle() {
   // initialize counterUpsideDown to 0
   let starUpsideDown = ""
 
+     // display inverted triangle while counterUpsideDown >= 0
      for (let counterUpsideDown=height;counterUpsideDown >= 0; counterUpsideDown--) {
 
        // if the counter is a multiple of 5, repeat planet symbols
        if (counterUpsideDown % 5 == 0) {
+         
         // repeat the planet symbol the number of times that the counter is equal to.
         starUpsideDown= "o".repeat(counterUpsideDown)
 
@@ -67,6 +74,7 @@ function displayTriangle() {
          
         //otherwise, if the counter is not a multiple of 5, repeat the star symbol
         else if (counterUpsideDown % 5 != 0) {
+          
            // repeat the star symbol the number of times that the counter is equal to.
           starUpsideDown = "* ".repeat(counterUpsideDown)
 
