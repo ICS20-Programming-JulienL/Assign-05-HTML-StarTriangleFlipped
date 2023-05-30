@@ -1,10 +1,10 @@
 // Created by: Julien Lamoureux
 // Created on: May 2023
-// This file contains the JS functions for index.html, Unit5-03-HTML-Factorial
+// This file contains the JS functions for index.html, Assign-05-HTML-StarTriangleFlipped
 
 "use strict";
 
-function calculateFactorial() {
+function displayTriangle() {
 
    // initialize numbers to an empty string
   let results = ""
@@ -16,9 +16,12 @@ function calculateFactorial() {
   // initialize factorial to 1
   let star = ""
 
-  // get userInteger from user input
-  let userInteger1 = document.getElementById("first-int").value
-  
+  // get height from user input
+  let height = document.getElementById("height").value
+
+  if ((height == "") || (height <= 0)) {
+    results = "Please enter a positive integer greater than 0.";
+    }
      do {
        if (counter % 5 == 0) {
          star= "o".repeat(counter)
@@ -30,7 +33,7 @@ function calculateFactorial() {
           results= results+star+"<br>"
           counter++
         }
-     } while (counter <= userInteger1)
+     } while (counter <= height)
 
   // initialize resultsUpsideDown to an empty string
 
@@ -38,11 +41,8 @@ function calculateFactorial() {
   let resultsUpsideDown= ""
   let starUpsideDown = ""
   // initialize factorial to 1
-
-  // get userInteger from user input
-  let userInteger = document.getElementById("first-int").value
   
-     for (let counterUpsideDown=userInteger;counterUpsideDown >= 0; counterUpsideDown--) {
+     for (let counterUpsideDown=height;counterUpsideDown >= 0; counterUpsideDown--) {
       
        if (counterUpsideDown % 5 == 0) {
         starUpsideDown= "o".repeat(counterUpsideDown)
